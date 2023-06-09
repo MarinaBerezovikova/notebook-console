@@ -1,0 +1,72 @@
+[
+  {
+    "topic": "purchases",
+    "date": {
+      "year": 2023,
+      "month": 2,
+      "day": 10
+    },
+    "email": "marber@gmail.com",
+    "text": "Butter, sugar, bread."
+  },
+  {
+    "topic": "thoughts",
+    "date": {
+      "year": 2023,
+      "month": 2,
+      "day": 15
+    },
+    "email": "marber@gmail.com",
+    "text": "I thought I\u0027m tired and need to have a walk.\nBut sometimes, after walking, I was felt that I was tired more as earlier."
+  },
+  {
+    "topic": "books",
+    "date": {
+      "year": 2023,
+      "month": 2,
+      "day": 16
+    },
+    "email": "earlier@mail.ru",
+    "text": "1)Antoine de Saint Exupéry - The little prince \n2)Pride and Prejudice by Jane Austen"
+  },
+  {
+    "topic": "Unnamed",
+    "date": {
+      "year": 2023,
+      "month": 5,
+      "day": 10
+    },
+    "email": "Undefined",
+    "text": "No text"
+  },
+  {
+    "topic": "Unnamed",
+    "date": {
+      "year": 2023,
+      "month": 5,
+      "day": 10
+    },
+    "email": "Undefined",
+    "text": "No text"
+  },
+  {
+    "topic": "Bla",
+    "date": {
+      "year": 2023,
+      "month": 5,
+      "day": 25
+    },
+    "email": "Blabla@blabla.com",
+    "text": "\nBla 1\nBlabla 2\nBlablabla 3"
+  },
+  {
+    "topic": "Example",
+    "date": {
+      "year": 2023,
+      "month": 5,
+      "day": 25
+    },
+    "email": "nonsense@abc.ru",
+    "text": "\nThis text have no sense like and everything else."
+  }
+]
