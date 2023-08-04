@@ -31,8 +31,7 @@ public class ScannerManager {
         try {
             date = LocalDate.parse(dateStr, dateFormat);
         } catch (DateTimeParseException e) {
-            System.out.println("Oops! Our analyzer haven't understand inputted date.\n");
-            getDateWithScanner();
+            System.out.println("Oops! Our analyzer haven't understand inputted date. You can try again.\n");
         } catch (InputMismatchException e) {
             e.printStackTrace();
         }

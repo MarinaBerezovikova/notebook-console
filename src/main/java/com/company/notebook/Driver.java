@@ -4,16 +4,18 @@ import java.io.IOException;
 
 public class Driver {
 
-    static String path = "e:\\LocalRepositoryGit\\data_note_6task.json";
+    static String fileName = "data_note.json";
 
     public static void main(String[] args) throws IOException {
 
-        JsonManager jsonManager = new JsonManager();
-        Notebook.notes = jsonManager.fileReader();
+        JsonFileReader jsonFileReader = new JsonFileReader();
+        JsonFileWriter jsonFileWriter = new JsonFileWriter();
+
+        Notebook.notes = jsonFileReader.readResource();
 
         NotebookUtility.startApplication();
 
         ScannerManager.scan.close();
-        jsonManager.fileWriter();
+        jsonFileWriter.fileWriter();
     }
 }
