@@ -1,4 +1,4 @@
-package com.company.notebook;
+package com.company.notebook.utils;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -10,12 +10,7 @@ import java.util.regex.Pattern;
 public class ScannerManager {
 
     //case-insensitive included
-    public static final Pattern EMAIL =
-            Pattern.compile("(?i)^([a-z0-9_-]+\\.)*[a-z0-9_-]+@[a-z0-9_-]+(\\.[a-z0-9_-]+)*\\.[a-z]{2,6}$");
-
-    //05-04-2005
-//    public static final Pattern DATE =
-//    Pattern.compile("^((0[1-9])|(1[0-9]|(2[0-9])))([-]|[\\/])([0|1|2][0-9])([-]|[\\/])(\\d{4})");
+    public static final Pattern EMAIL = Pattern.compile("^(?i)[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$");
 
     static Scanner scan = new Scanner(System.in);
 

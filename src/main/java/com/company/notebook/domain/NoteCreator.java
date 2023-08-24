@@ -1,10 +1,12 @@
-package com.company.notebook;
+package com.company.notebook.domain;
+
+import com.company.notebook.utils.ScannerManager;
 
 import java.time.LocalDate;
 
 public class NoteCreator extends Note {
 
-    public static Note CreateNote() {
+    public static void CreateNote(Notebook notebook) {
         Note note = new Note();
         note.setDate(LocalDate.now());
         System.out.println("Input a topic of note:");
@@ -16,11 +18,10 @@ public class NoteCreator extends Note {
         System.out.println("Input the text of note:");
         note.setText(ScannerManager.getTheTextWithScanner());
 
-        SaveNote(note);
-        return note;
+        SaveNote(notebook, note);
     }
 
-    private static void SaveNote(Note newNote) {
-        Notebook.notes.add(newNote);
+    private static void SaveNote(Notebook notebook, Note newNote) {
+        notebook.getNotes().add(newNote);
     }
 }
