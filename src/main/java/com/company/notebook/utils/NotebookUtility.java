@@ -1,10 +1,12 @@
-package com.company.notebook;
+package com.company.notebook.utils;
+
+import com.company.notebook.domain.*;
 
 public class NotebookUtility {
     static boolean isWorking = true;
     static NotebookShower notebookShower = new NotebookShower();
 
-    public static void startApplication() {
+    public static void startApplication(Notebook notebook) {
 
         System.out.println("Welcome! Everything is ready to work. Let's start work with notebook.\n");
 
@@ -18,59 +20,60 @@ public class NotebookUtility {
                     break;
                 case 1:
                     System.out.println("You chose number 1 - \"Show me all notes\"\n");
-                    notebookShower.showNotebookList(Notebook.notes);
+                    notebookShower.showNotebookList(notebook.getNotes());
                     break;
                 case 2:
                     System.out.println("You chose number 2 - \"Add a new note\"\n");
-                    NoteCreator.CreateNote();
-                    notebookShower.showNotebookList(Notebook.notes);
+                    NoteCreator.CreateNote(notebook);
+                    notebookShower.showNotebookList(notebook.getNotes());
                     break;
-                case 3: // выделить в отдельный метод
+                case 3:
                     System.out.println("You chose number 3 - \"Find the note\"\n");
-                    searchingMenu();
+                    searchingMenu(notebook);
                     break;
                 case 4:
                     System.out.println("You chose number 4 - \"Exit from application\"\n ");
                     System.out.println("The application is closed. Have a good day!");
                     isWorking = false;
+                    ScannerManager.scan.close();
             }
         }
     }
 
     static NoteSearcher noteSearcher = new NoteSearcher();
 
-    static void searchingMenu() {
+    static void searchingMenu(Notebook notebook) {
         System.out.println("We able to search by several parameters:\n1 - topic\n2 - date\n3 - email\n4 - part of text\n0 - step back\nPlease, input the number of fits parameter:");
 
         switch (ScannerManager.getChooseSearching()) {
             case 0:
                 break;
             case 1: //topic
-                noteSearcher.findNoteByTopic();
+                noteSearcher.findNoteByTopic(notebook);
                 verifiedResult();
                 break;
 
             case 2: //date
-                noteSearcher.findNoteByDate();
+                noteSearcher.findNoteByDate(notebook);
                 verifiedResult();
                 break;
 
             case 3: //email
-                noteSearcher.findNoteByEmail();
+                noteSearcher.findNoteByEmail(notebook);
                 verifiedResult();
                 break;
 
             case 4: //a part of text
-                noteSearcher.findNoteByMatchText();
+                noteSearcher.findNoteByMatchText(notebook);
                 verifiedResult();
                 break;
         }
     }
 
     static void verifiedResult() {
-        if (noteSearcher.foundedNotes.size() != 0) {
+        if (noteSearcher.getFoundedNotes().size() != 0) {
             offerToSortNotes();
-            notebookShower.showNotebookList(noteSearcher.foundedNotes);
+            notebookShower.showNotebookList(noteSearcher.getFoundedNotes());
         } else {
             System.out.println("We not found any notes by your parameter.\n");
         }
@@ -90,10 +93,10 @@ public class NotebookUtility {
             case 0:
                 break;
             case 1: // sort by topic
-                NoteSorter.sortByTopic(noteSearcher.foundedNotes);
+                NoteSorter.sortByTopic(noteSearcher.getFoundedNotes());
                 break;
             case 2: // sort by date
-                NoteSorter.sortByDate(noteSearcher.foundedNotes);
+                NoteSorter.sortByDate(noteSearcher.getFoundedNotes());
                 break;
         }
     }

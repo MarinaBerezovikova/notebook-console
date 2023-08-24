@@ -68,5 +68,35 @@
     },
     "email": "nonsense@abc.ru",
     "text": "\nThis text have no sense like and everything else."
+  },
+  {
+    "topic": "Summer",
+    "date": {
+      "year": 2023,
+      "month": 7,
+      "day": 11
+    },
+    "email": "summerfly@mail.ru",
+    "text": "\nSummer is undoubtedly an awesome time of the year!"
+  },
+  {
+    "topic": "No topic",
+    "date": {
+      "year": 2023,
+      "month": 7,
+      "day": 14
+    },
+    "email": "maia@mail.ru",
+    "text": "\nThe text is not exist."
+  },
+  {
+    "topic": "Note",
+    "date": {
+      "year": 2023,
+      "month": 8,
+      "day": 4
+    },
+    "email": "evaeva@mail.ru",
+    "text": "\nMy lovely women\u0027s name is Eva. If I sometime will have a child girl I will name her Eva."
   }
 ]

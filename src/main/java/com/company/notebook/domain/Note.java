@@ -1,4 +1,4 @@
-package com.company.notebook;
+package com.company.notebook.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;

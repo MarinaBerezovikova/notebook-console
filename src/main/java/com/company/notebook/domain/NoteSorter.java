@@ -1,4 +1,4 @@
-package com.company.notebook;
+package com.company.notebook.domain;
 
 import java.util.Comparator;
 import java.util.List;
